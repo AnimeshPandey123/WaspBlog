@@ -42,6 +42,25 @@ class ProjectController extends Controller
              Session::flash('success','your project is created');
         return redirect()->back();
     }
+      public function update(Request $request,$id)
+    {
+        //dd($request->title);
+          $this->validate($request,[
+            'title'=>'required',
+            'status'=>'required',
+            'content'=>'required',
+                   ]);
+          //dd($request->title);
+      $user=Auth::user();
+      //dd($user->id);
+       $project=Project::find($id);
+       $project->title=$request->title;
+       $project->status=$request->status;
+       $project->user_id=$user->id;
+       $project->description=$request->description;
+             Session::flash('success','your project is updated');
+        return redirect()->back();
+    }
     public function projects()
     {
     	return view('General.projects')->with('projects',Project::all());

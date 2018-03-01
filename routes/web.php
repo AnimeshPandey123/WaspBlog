@@ -99,7 +99,7 @@ Route::get('/projects/create',[
 
 	]);
 Route::get('/projects/edit/{id}','ProjectController@edit')->name('project.edit');
-Route::post('/projects/update','ProjectController@update')->name('project.update');
+Route::post('/projects/update/{id}','ProjectController@update')->name('project.update');
 Route::get('project/delete/{id}','ProjectController@delete')->name('project.delete');
 Route::get('messages','ContactController@getall')->name('message');
 Route::get('messages/show/{id}','ContactController@show')->name('message.show');
