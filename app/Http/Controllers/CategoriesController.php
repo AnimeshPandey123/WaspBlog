@@ -13,7 +13,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index')->with('categories',Category::all());
+        return view('Admin.Categories.index')->with('categories',Category::all());
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('Admin.Categories.create');
         
     }
 

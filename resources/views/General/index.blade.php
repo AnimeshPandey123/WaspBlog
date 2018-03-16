@@ -6,13 +6,14 @@
     	<meta name="viewport" content="width=device-width" />
 
 
-		<link rel="shortcut icon" src="{{asset('/images/wasp.ico')}}" />
+		<link rel="shortcut icon" href="{{asset('/images/wasp.ico')}}" />
+		
 
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 		<title>Blog | WASP</title>
 		  <!-- Styles -->
-    
+     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,11 +34,11 @@
 		<link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
 
 		<!-- jQuery UI CSS -->
-		<link rel="stylesheet" type="text/css" href="{{asset('js/jui/jquery-ui.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('js/jui/jquery-ui.min.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('js/jui/jquery-ui.min.css')}}">		
 
 		<!--Our CSS -->
-		<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+		<link rel="stylesheet" type="text/css" href="{{asset('css/style.min.css')}}">
 		<style type="text/css">
 			.imgt{
 				background-image: url("images/mainImage.png");
@@ -47,6 +48,18 @@
 				    width: 100%;
 				    background-size: cover;
 			}
+		.spanis-1{
+			 color: red;
+		}
+		.spanis-2{
+			 color: green;
+		}
+		.spanis-3{
+			 color: blue;
+		}
+		.spanis-4{
+			 color: yellow;
+		}
 		</style>
 	</head>
 
@@ -129,9 +142,9 @@
 
 	
 	<!-- Core JS Files -->
-		<script src="{{asset('js/jquery-3.2.1.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/jquery-3.2.1.min.js')}}" type="text/javascript"></script>
 		<script src="{{asset('js/jquery-ui-1.12.1.custom.min.js')}}" type="text/javascript"></script>
-		<script src="{{asset('js/popper.js')}}" type="text/javascript"></script>
+		<script src="{{asset('js/popper.min.js')}}" type="text/javascript"></script>
 		<script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
 	
 	<!--Backup Scripts -->
@@ -152,10 +165,10 @@
 		<script src="{{asset('js/jquery-ui-1.12.1.custom.min.js')}}" type="text/javascript"></script>
 
 	<!--  Paper Kit Initialization snd functons -->
-		<script src="{{asset('js/paper-kit.js')}}"></script>
+		
 
 	<!--  Plugins for Slider -->
-		<script src="{{asset('js/nouislider.js')}}"></script>
+		<script src="{{asset('js/nouislider.min.js')}}"></script>
 
 	<!-- Switches -->
 		<script src="{{asset('js/bootstrap-switch.min.js')}}"></script>
@@ -165,7 +178,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 		</script>
 		<!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.min.js') }}"></script>
     <script src=" {{asset('js/toastr.min.js')}} "></script>
     <script>
         @if(Session::has('success'))

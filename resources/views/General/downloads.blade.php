@@ -1,4 +1,4 @@
-@extends('General.index')
+@extends('General.index2')
 @section('content')
 
 		<br><br><br><br>

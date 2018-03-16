@@ -31,7 +31,7 @@
  				<td>{{$message->name}}</td>
  				<td>{{$message->description}}</td>
  				<td>
-						<a href="{{route('message.show',['id'=>$message->id])}}" class="btn btn-xs btn-info" id="show" > Show </a>
+						<a class="btn btn-xs btn-info" id="show"> Show </a>
  				</td>
  				<td>
  				<a href="{{route('message.delete',['id'=>$message->id])}}" class="btn btn-xs btn-danger" > Trash </a>
@@ -51,19 +51,50 @@
  			</tbody>
 
 
- 			</table>	
+
+ 			</table>
+
  			</div>
- 			
+ 			 <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body" id="myModal">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
  		</div>
  		
-<script type="text/javascript">
-	$document.ready(function(){
-			$(#show).click(function(){
-				$get.('show',function(data){
-						console.log(data)
-				});
 
-			});
-	});
+@stop
+@section('scripts')
+  <script type="text/javascript">
+    $('show').click(function() {
+  console.log('#someButton was clicked');
+  // do something
+});
+    	console.log('#someButton was clicked');
+    document.getElementById("show").addEventListener("click", function(){
+
+
+        console.log('dataaa');
+      });
+        //var show = document.getElementById('show');
+    
+    
+    
+       
+
+    
 </script>
 @stop

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('admin.includes.error')
+@include('Admin.includes.error')
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			Edit Users

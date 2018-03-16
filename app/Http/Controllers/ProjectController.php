@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function edit($id)
     {
     	$project=Project::find($id);
-    	return view('Admin.projects.update')->with('project',$project);
+    	return view('Admin.Projects.update')->with('project',$project);
     }
     public function store(Request $request)
     {

@@ -6,7 +6,7 @@ namespace App;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {

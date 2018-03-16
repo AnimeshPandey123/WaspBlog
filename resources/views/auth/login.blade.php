@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('General.index2')
 
 @section('content')
 <div class="container">
@@ -57,10 +57,14 @@
 
                                 
                             </div>
+                            <br><br><br>
                         </div>
                     </form>
+
                 </div>
+
             </div>
+            <div style="margin-left:250px"><label>Dont have an account?  <a href="{{route('register')}}">Sign Up</a> </label></div>
         </div>
     </div>
 </div>

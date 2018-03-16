@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Message;
 use Session;
+use App\Message;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -59,7 +59,9 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        dd($id);
+        $contact=Message::find($id);
+        return response()->json(['data'=>$contact->description],200);
+        //dd($contact->description);
     }
 
     /**

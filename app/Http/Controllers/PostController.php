@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index')->with('posts',Post::all());
+        return view('Admin.Posts.index')->with('posts',Post::all());
     }
 
     /**
@@ -36,7 +36,7 @@ class PostController extends Controller
         return redirect()->back();
         
        }
-        return view('admin/posts/create')->with('categories',Category::all())
+        return view('Admin.Posts.create')->with('categories',Category::all())
                                          ->with('tags',$tags);
     }
 
@@ -49,8 +49,7 @@ class PostController extends Controller
     public function store(Request $request)
     { 
         $this->validate($request,[
-            'title'=>'required',
-           
+            'title'=>'required',      
             'content'=>'required',
             'category_id'=>'required',
             'tags'=>'required'
@@ -58,14 +57,24 @@ class PostController extends Controller
             
 
         ]);
-      
-       // {!! $request->content !!}
-        $featured=$request->featured;
+       
+        if(count($request->tags)>4)
+        {
+        Session::flash('nope','you can only use 4 tags');
+        return redirect()->back();
+        }
+        else{
+        $category=Category::find($request->category_id);
+        if($category->name=="posts")
+        {
+            $this->validate($request,[
+                    'featured'=>'required'
+                ]);
+             $featured=$request->featured;
 
         $featured_new_name='/' . $request->file('featured')->getClientOriginalName();
 
         $featured->move('uploads/posts',$featured_new_name);
-
         $post=Post::create([ 
             'title'=>$request->title,
             'content'=>$request->content,
@@ -77,6 +86,27 @@ class PostController extends Controller
         $post->tags()->attach($request->tags);
         Session::flash('success','your post is created');
         return redirect()->back();
+        }
+        else{
+        $post=Post::create([ 
+            'title'=>$request->title,
+            'content'=>$request->content,
+            
+            'slug' => str_slug($request->title),
+            'category_id'=>$request->category_id,
+            'user_id'=>Auth::user()->id
+        ]);
+        $post->tags()->attach($request->tags);
+        Session::flash('success','your Document is created');
+        return redirect()->back();
+
+        }
+      
+       // {!! $request->content !!}
+       
+
+   }
+        
     }
 
     /**
@@ -99,7 +129,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=Post::find($id);
-        return view('admin.posts.update')->with('post',$post)
+        return view('Admin.Posts.update')->with('post',$post)
                                         ->with('categories',Category::all())
                                         ->with('tags',Tag::all());
     }
@@ -155,7 +185,7 @@ class PostController extends Controller
       public function trashed()
     {
         $posts=Post::onlyTrashed()->get();
-        return view('admin/posts/trashed')->with('posts',$posts);
+        return view('Admin.Posts.trashed')->with('posts',$posts);
     }
       public function kill($id)
     {
@@ -225,10 +255,11 @@ class PostController extends Controller
     public function  single($id)
     {
         $post=Post::find($id);
-       $pos=Category::where('name','posts')->get();
+        $pos=Category::where('name','posts')->get();
         $new=$pos->first()->posts()->latest()->get();
        
         $k=[];
+       // dd($post->tags);
         foreach($post->tags as $tag)
         {
             $k[]=$tag;
@@ -245,12 +276,19 @@ class PostController extends Controller
 
         ]);
 
+         $progressbar=[
+           'danger',
+           'success',
+           'info',
+           'warning'
+        ];
 
       //  dd($p['description']);
         return view('General.blog_post')->with('posts',Post::all())
                                    ->with('post',$p)
                                     ->with('lpost',$new)
-                                    ->with('tags',$k);
+                                    ->with('tags',$k)
+                                    ->with('progress',$progressbar);
     } 
 
     

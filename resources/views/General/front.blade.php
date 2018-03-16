@@ -1,6 +1,6 @@
 @extends('General.index')
 @section('content')
-<div class="imgt" data-parallax="true" style="">	
+<div class="page-header" data-parallax="true" style="background-image: url('images/mainImage.png');">	
 				<div class="filter"></div>
 			<div class="container">
 			    <div class="motto text-center">
@@ -31,15 +31,16 @@
     								&nbsp;&nbsp;&nbsp;
     								<i class="fa fa-clock"></i>{{$post['created_at']}}
     								&nbsp;&nbsp;&nbsp;
-    								<span class="label label-success">business</span>
-    								<span class="label label-danger">wasp</span>
-    								<span class="label label-info">news</span>
+    								@foreach($tags as $tag)
+									<span class="label label-{{$progress[$loop->index]}}">{{$tag->tag}}</span>
+									@endforeach
+    								
     							</div>
     							<br>
     							<div class="post">
 
     								{!! $post['description'] !!}
-    								<span class="text-info"><a href="{{route('documentation',['id'=>$post['id']])}}">Read More</a></span>
+    								<span class="text-info"><a href="{{route('postone',['id'=>$post['id']])}}">Read More</a></span>
     							</div>
     						</div>
     					</div>
@@ -47,12 +48,12 @@
     				
     				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 projects">
     					<div class="text-center">
-    						@foreach($projects as $project)
+    					@foreach($projects as $project)
     						<div class="pro text-danger" style="">
-    							<i class="fa fa-graduation-cap" style="font-size:2.4em;"></i><br>
-    							<h5 style="font-size:1.5em;" class="text-center">{{$project->title}}</h5>
+    							<i class="fa fa-{{$icons[$loop->index]}}" style="font-size:2.4em;"></i><br>
+    							<h5 style="font-size:1.5em;" class="text-center spanis-{{$project->id}}">{{$project->title}}</h5>
     							<div class="progress">
-    								<div class="progress-bar progress-bar-danger" role="progressbar" style="width:{{{ $project['status'] }}}%;"></div>
+    						 		<div class="progress-bar progress-bar-{{$progress[$loop->index]}}" role="progressbar" style="width:{{{ $project['status'] }}}%;"></div>
     							</div>
     						</div>
     						<br>

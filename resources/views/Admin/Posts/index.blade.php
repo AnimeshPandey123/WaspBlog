@@ -10,10 +10,10 @@
  			<table class="table table-hover">	
  			<thead>
  			<th>
- 				Image
+ 				Title
  			</th>
  			<th>
- 				Title
+ 				Category
  			</th>
  			<th>
  				Edit
@@ -28,9 +28,10 @@
  				@foreach($posts as $post)
  				<tr>
  					<td>
- 					<img src="{{url($post->featured)}}" height="70px" width="90px">
+ 					
  				</td>
  				<td>{{$post->title}}</td>
+ 				<td>{{$post->category->name}}</td>
  				<td>
 						<a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-xs btn-info" > Edit </a>
  				</td>

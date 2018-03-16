@@ -1,7 +1,7 @@
-@extends('General.index')
+@extends('General.index2')
 @section('content')
 
-		<br><br><br><br>
+		<br><br>
 
 		<div class="container downloads">
 			<div class="row">
@@ -13,7 +13,7 @@
 						<i class="fa fa-clock"></i>{{$post['created_at']}}
 						&nbsp;&nbsp;&nbsp;
 						@foreach($tags as $tag)
-						<span class="label label-success">{{$tag->tag}}</span>
+						<span class="label label-{{$progress[$loop->index]}}">{{$tag->tag}}</span>
 						@endforeach
 					
 					</div><br>

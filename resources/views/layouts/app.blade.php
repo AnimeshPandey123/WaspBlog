@@ -11,9 +11,13 @@
     <title>Wasp Blog</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/wasp.png')}}">
+    <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     @yield('styles');
    
 </head>
@@ -102,10 +106,7 @@
                             <i class="fa fa-map-signs"></i>&nbsp;
                             <a href=" {{route('categories')}} " class="walter">Categories</a>
                         </li>
-                         <li class="list-group-item sido">
-                            <i class="fa fa-plus-circle"></i>&nbsp;
-                            <a href=" {{route('category.create')}} " class="walter">Create Categories</a>
-                        </li> 
+                       
                          <li class="list-group-item sido">
                             <i class="fa fa-clipboard"></i>&nbsp;
                             <a href="{{route('projects')}}" class="walter">All projects</a>
@@ -150,7 +151,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script src="{{ asset('js/app.min.js') }}"></script>
     <script src=" {{asset('js/toastr.min.js')}} "></script>
     <script>
         @if(Session::has('success'))
@@ -160,6 +162,7 @@
         @endif
 
     </script>
+  
     @yield('scripts')
 </body>
 </html>
