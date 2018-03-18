@@ -13,7 +13,7 @@
 
 		<title>Blog | WASP</title>
 		  <!-- Styles -->
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     
     <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -178,7 +178,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 		</script>
 		<!-- Scripts -->
-    <script src="{{ asset('js/app.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src=" {{asset('js/toastr.min.js')}} "></script>
     <script>
         @if(Session::has('success'))

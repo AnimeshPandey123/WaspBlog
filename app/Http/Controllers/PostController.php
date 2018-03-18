@@ -228,14 +228,18 @@ class PostController extends Controller
     public function posts()
     {
 
-        $pos=Category::where('name','posts')->get();
+        $pos=Category::where('name','Posts')->get();
+        //dd($pos);
         $new=$pos->first()->posts()->latest()->get();
+        //dd($new);
         $l=$new->last();
+        //dd($l);
         $k=[];
         foreach($l->tags as $tag)
         {
             $k[]=$tag;
         }
+     //  dd($k);
        // dd($new->first()->id);
        // dd($post->created_at);
         $p=collect([
@@ -248,17 +252,24 @@ class PostController extends Controller
 
         ]);
 
+        $progressbar=[
+           'danger',
+           'success',
+           'info',
+           'warning'
+        ];
 
-      //  dd($p['description']);
+       //dd($p);
         return view('General.blog_post')->with('posts',Post::all())
                                    ->with('post',$p)
                                     ->with('lpost',$new)
-                                    ->with('tags',$k);
+                                    ->with('tags',$k)
+                                    ->with('progress',$progressbar);
     }
     public function  single($id)
     {
         $post=Post::find($id);
-        $pos=Category::where('name','posts')->get();
+        $pos=Category::where('name','Posts')->get();
         $new=$pos->first()->posts()->latest()->get();
        
         $k=[];

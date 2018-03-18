@@ -16,7 +16,7 @@ Route::get('/projects','ProjectController@projects')->name('projects.general');
 Route::get('/dowloads',function(){
 		return view('General.downloads');
 })->name('downloads');
-Route::get('/dowloads/{id}','PostController@documentation')->name('documentation');
+Route::get('/documents/{id}','PostController@documentation')->name('documentation');
 Route::get('/posts','PostController@posts')->name('postall');
 Route::get('/posts/{id}','PostController@single')->name('postone');
 Route::get('/contact','ContactController@index')->name('contact');
@@ -72,17 +72,14 @@ Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
 Route::get('/tag/delete/{id}', 'TagController@destroy')->name('tag.delete');
 
 
-Route::get('/users','UsersController@index')->name('users');
-Route::get('/users/create','UsersController@create')->name('user.create');
-Route::post('/users/store','UsersController@store')->name('user.store');
-Route::get('/users/admin/{id}','UsersController@admin')->name('user.admin');
-Route::get('/users/notadmin/{id}','UsersController@notadmin')->name('user.not.admin');
-Route::get('/users/profile','ProfileController@index')->name('user.profile');
-Route::post('/users/profile','ProfileController@update')->name('user.profile.update');
-Route::get('/users/profile/delete/{id}','UsersController@destroy')->name('user.delete');
-
-
-
+//Route::get('/users','UsersController@index')->name('users');
+//Route::get('/users/create','UsersController@create')->name('user.create');
+//Route::post('/users/store','UsersController@store')->name('user.store');
+//Route::get('/users/admin/{id}','UsersController@admin')->name('user.admin');
+//Route::get('/users/notadmin/{id}','UsersController@notadmin')->name('user.not.admin');
+//Route::get('/users/profile','ProfileController@index')->name('user.profile');
+//Route::post('/users/profile','ProfileController@update')->name('user.profile.update');
+//Route::get('/users/profile/delete/{id}','UsersController@destroy')->name('user.delete');
 
 
 Route::post('/projects',[

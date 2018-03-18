@@ -64,7 +64,7 @@
                 </div>
 
             </div>
-            <div style="margin-left:250px"><label>Dont have an account?  <a href="{{route('register')}}">Sign Up</a> </label></div>
+            
         </div>
     </div>
 </div>

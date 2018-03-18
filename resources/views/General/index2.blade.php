@@ -155,7 +155,7 @@
 			$('[data-toggle="tooltip"]').tooltip();
 		</script>
 		<!-- Scripts -->
-    <script src="{{ asset('js/app.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src=" {{asset('js/toastr.min.js')}} "></script>
     <script>
         @if(Session::has('success'))
