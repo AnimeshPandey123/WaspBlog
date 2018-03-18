@@ -57,7 +57,8 @@ class PostController extends Controller
             
 
         ]);
-       
+        $category=Category::find($request->category_id);
+       // dd($request->name);
         if(count($request->tags)>4)
         {
         Session::flash('nope','you can only use 4 tags');
@@ -65,7 +66,9 @@ class PostController extends Controller
         }
         else{
         $category=Category::find($request->category_id);
-        if($category->name=="posts")
+
+
+        if(($request->category_id)==1)
         {
             $this->validate($request,[
                     'featured'=>'required'

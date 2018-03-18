@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
           DB::table('categories')->insert([
-            'name' => "posts",
+            'name' => "Posts",
         ]);
             DB::table('categories')->insert([
             'name' => "Documentations",
