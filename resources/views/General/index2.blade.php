@@ -24,7 +24,6 @@
 
 		<!-- FontAweome CDN -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 
 
@@ -57,7 +56,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/WASP" target="_blank">
-                                <i class="fab fa-github-alt"></i>
+                                <i class="fa fa-github"></i>
                             </a>
                         </li>
                         <li class="nav-item">

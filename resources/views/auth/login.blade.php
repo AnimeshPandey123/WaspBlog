@@ -2,10 +2,17 @@
 
 @section('content')
 <div class="container">
+<br>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Login</div>
+            <div class="card card-success bg-success" style="color:#fff;border-radius:0px;">
+                <div class="card-header">
+                    <h5 style="font-weight:bold;">
+                        <i class="fa fa-sign-in"></i>&nbsp;
+                        Login
+                    </h5>
+                    
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -51,7 +58,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     Login
                                 </button>
 

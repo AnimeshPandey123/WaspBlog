@@ -20,28 +20,28 @@ class DatabaseSeeder extends Seeder
      [
         'name' => 'Animesh Pandey',
         'email' => 'animesh@karkhana.asia',
-        'password' => bcrypt(123456), // secret
+        'password' => bcrypt(karkhana_admin09wasp), // secret
         'remember_token' => str_random(10),
     ]);
         DB::table('users')->insert(
      [
         'name' => 'Aakash Raj Dahal',
         'email' => 'aakash@karkhana.asia',
-        'password' => bcrypt(123456), // secret
+        'password' => bcrypt(karkhana_admin09wasp), // secret
         'remember_token' => str_random(10),
     ]);
             DB::table('users')->insert(
      [
         'name' => 'William',
         'email' => 'william@karkhana.asia',
-        'password' => bcrypt(123456), // secret
+        'password' => bcrypt(karkhana_admin09wasp), // secret
         'remember_token' => str_random(10),
     ]);
                 DB::table('users')->insert(
      [
         'name' => 'Suresh Ghimire',
         'email' => 'suresh@karkhana.asia',
-        'password' => bcrypt(123456), // secret
+        'password' => bcrypt(karkhana_admin09wasp), // secret
         'remember_token' => str_random(10),
     ]);
 
@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
      [
         'name' => 'Prayush Bijukche',
         'email' => 'prayush@karkhana.asia',
-        'password' => bcrypt(123456), // secret
+        'password' => bcrypt(karkhana_admin09wasp), // secret
         'remember_token' => str_random(10),
     ]);
           DB::table('categories')->insert([
