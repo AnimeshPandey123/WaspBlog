@@ -110,12 +110,10 @@
     					<div class="col-lg-6 col-md-6 col-sm-12">
     						<h3 class="text-danger">
     							<i class="fa fa-rss"></i>&nbsp;
-    							Subscribe to our RSS
+    							Designed by Aakash Raj Dahal
     						</h3>
     						<br>
-    						<div class="input-group">
-            					<input type="text" class="boxee" placeholder="Enter Email" aria-describedby="basic-addon1">
-        					</div>
+    						
     					</div>
     					<div class="col-lg-6 col-md-6 col-sm-12">
     						<blockquote class="blockquote">
