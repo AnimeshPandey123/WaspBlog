@@ -91,17 +91,21 @@ class PostController extends Controller
         return redirect()->back();
         }
         else{
-        $post=Post::create([ 
-            'title'=>$request->title,
-            'content'=>$request->content,
-            
-            'slug' => str_slug($request->title),
-            'category_id'=>$request->category_id,
-            'user_id'=>Auth::user()->id
+            if($request->featured)
+            {
+                Session::flash('nope','Documentation doesnot need a picture');
+                    return redirect()->back();
+            }
+                 $post=Post::create([ 
+                     'title'=>$request->title,
+                     'content'=>$request->content,
+                     'slug' => str_slug($request->title),
+                     'category_id'=>$request->category_id,
+                     'user_id'=>Auth::user()->id
         ]);
-        $post->tags()->attach($request->tags);
-        Session::flash('success','your Document is created');
-        return redirect()->back();
+             $post->tags()->attach($request->tags);
+             Session::flash('success','your Document is created');
+             return redirect()->back();
 
         }
       
