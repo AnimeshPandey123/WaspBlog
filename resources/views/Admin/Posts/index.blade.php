@@ -27,9 +27,6 @@
  				
  				@foreach($posts as $post)
  				<tr>
- 					<td>
- 					
- 				</td>
  				<td>{{$post->title}}</td>
  				<td>{{$post->category->name}}</td>
  				<td>

@@ -14,10 +14,10 @@
 						<label for="title">Title</label>
 						<input type="text" name="title" class="form-control" value="{{$project->title}}">
 					</div>
-					<div class="newslider">
+					<div class="slidecontainer">
 						<label>Status</label>
 						<p>Percentage of Completion: <span id="demo" for="status"></span></p>
-  						<input type="range" min="1" max="100" class="nslid" id="myRange" name="status" value="{{$project->status}}">
+  						<input type="range" min="1" max="100" class="slider" id="myRange" name="status" value="{{$project->status}}">
   							
 							</div>
 						 
@@ -44,25 +44,14 @@
 @stop
 @section('styles')
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-@stop
-@section('scripts')
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
-	<script>
-    $(document).ready(function() {
-        $('#content').summernote();
-    });
-  </script>
-
-@stop
-@section('styles')
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
 <style>
-.newslidernslid {
+.slidecontainer {
     width: 100%;
 }
 
-.nslid {
+.slider {
     -webkit-appearance: none;
     width: 100%;
     height: 25px;
@@ -73,11 +62,11 @@
     transition: opacity .2s;
 }
 
-.nslid:hover {
+.slider:hover {
     opacity: 1;
 }
 
-.nslid::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -86,7 +75,7 @@
     cursor: pointer;
 }
 
-.nslid::-moz-range-thumb {
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background: #4CAF50;
@@ -94,8 +83,16 @@
 }
 </style>
 @stop
-
 @section('scripts')
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+
+	<script>
+    $(document).ready(function() {
+        $('#content').summernote();
+    });
+  </script>
+
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
 
 	<script>
@@ -108,7 +105,7 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 output.innerHTML = slider.value;
 
-nslid.oninput = function() {
+slider.oninput = function() {
   output.innerHTML = this.value;
 }
 </script>
