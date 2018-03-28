@@ -99,9 +99,10 @@
 								From HTML and CSS to designing graphics using Photoshop and Illustrator, he does it all.
 							</p>
 							<br>
-							<i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.facebook.com/akashraj.dahal" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://twitter.com/AkashRajDahal" style="color:#fff;"><i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://www.instagram.com/aakashdahal" style="color:#fff;">
+							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i></a>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/animesh.jpg')}}" class="profile image-fluid">
@@ -112,9 +113,11 @@
 								But eventually he learns and makes WASP products run smoothly under the hood without any problems.
 							</p>
 							<br>
-							<i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.facebook.com/ani.mesh.775" style="color:#fff;"><i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://twitter.com/Ani_mesh_pandey" style="color:#fff;"><i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://www.instagram.com/ani_mesh_pandey" style="color:#fff;">
+							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i></a>
+							
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/prayush.jpg')}}" class="profile">
@@ -125,9 +128,10 @@
 								In his spare time, he jams with the peeps at work singing very loudly and disturbing his team.
 							</p>
 							<br>
-							<i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.facebook.com/bprayush" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
 							<i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.instagram.com/bprayush" style="color:#fff;">
+							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i></a>
 						</div>
 					</div>
 					<br><br><br><br><br>
@@ -141,9 +145,10 @@
 								He is responsible for communicating with other teams at Karkhana and making sure everything runs smoothly in the team.
 							</p>
 							<br>
-							<i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.facebook.com/surayshh" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
 							<i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.instagram.com/sureshghimire" style="color:#fff;">
+							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i></a>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/william.jpg')}}" class="profile">
@@ -154,9 +159,10 @@
 								He connects all the different pieces of Designs, APIs and Backend components to develop Android Applications.
 							</p>
 							<br>
-							<i class="fab fa-facebook" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i>
-							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i>
+							<a href="https://www.facebook.com/raiwilliam.reaper" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://twitter.com/Williamrai11Rai" style="color:#fff;"><i class="fab fa-twitter" style="margin-left:20px;margin-right:20px;"></i></a>
+							<a href="https://www.instagram.com/raiwilliam" style="color:#fff;">
+							<i class="fab fa-instagram" style="margin-left:20px;margin-right:20px;"></i></a>
 						</div>
     				</div>
 				</div>
