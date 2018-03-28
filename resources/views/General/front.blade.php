@@ -20,12 +20,14 @@
     		<div class="container">
     			<div class="row">
     				<div class="col-lg-6 col-md-6 col-sm-12">
+    				@if($post)
+    				
     					<div class="blog">
     						<div class="image">
     							<img src="{{asset($post['featured'])}}" style="width:100%;">
     						</div>
     						<div class="cont">
-    							<h4 class="text-info">{{$post['title']}}</h4><br>
+    							<a href="{{route('postone',['id'=>$post['id']])}}"><h4 class="text-info" >{{$post['title']}}</h4></a><br>
     							<div class="smallboi">
     								<i class="fa fa-user"></i>&nbsp;{{$post['name']}}
     								&nbsp;&nbsp;&nbsp;
@@ -44,6 +46,18 @@
     							</div>
     						</div>
     					</div>
+    				
+
+    				@else
+    				
+    					<div class="blog">
+    					<div class="cont">
+    						<label>There is no post</label>
+    					</div>
+    						
+    					</div>
+    				
+    				@endif	
     				</div>
     				
     				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 projects">

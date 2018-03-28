@@ -8,6 +8,11 @@ use Session;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
+// include composer autoload
+//require 'vendor/autoload.php';
+
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
@@ -73,11 +78,26 @@ class PostController extends Controller
             $this->validate($request,[
                     'featured'=>'required'
                 ]);
-             $featured=$request->featured;
-
-        $featured_new_name='/' . $request->file('featured')->getClientOriginalName();
-
-        $featured->move('uploads/posts',$featured_new_name);
+             $image       = $request->file('featured');
+            $featured_new_name    = '/' .$image->getClientOriginalName();
+            // create new image with transparent background color
+            //$background = Image::canvas(731, 274);
+         $image_resize = Image::make($image->getRealPath())->crop(731, 274);
+                   
+               // $background->insert($image_resize, 'bottom');
+           
+       //  $image_resize->crop(731, 274);
+         $image_resize->resizeCanvas(731, 274,'left');
+         //$image_resize->resizeCanvas(731, 274,'right');
+         $image_resize->save(public_path().'/'.'uploads/posts' .$featured_new_name);
+  //           $featured=$request->featured;
+  //           $img = Image::make($request->file('featured'))->resize(731, 274);
+            // dd($img);
+   //     $featured_new_name='/' .$img;
+        //dd($featured_new_name);
+        // save the same file as jpg with default quality
+   //     $img->move('uploads/posts',$featured_new_name);
+        //$featured->move('uploads/posts',$featured_new_name);
         $post=Post::create([ 
             'title'=>$request->title,
             'content'=>$request->content,
@@ -195,6 +215,9 @@ class PostController extends Controller
         $kill=Post::withTrashed()->where('id',$id)->first();
 
         $kill->forceDelete();
+        $file= $kill->featured;
+        $filename = public_path().'/uploads/'.$file;
+        \File::delete($filename);
          Session::flash('nope','Your post is permanantly deleted');
 
         return redirect()->back();

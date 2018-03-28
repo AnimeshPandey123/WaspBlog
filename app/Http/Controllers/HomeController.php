@@ -38,12 +38,12 @@ class HomeController extends Controller
         //dd($new);
         //dd($post);
          $k=[];
-        foreach($post->tags as $tag)
-        {
-            $k[]=$tag;
-        }
-       //dd($k);
-        $p=collect([
+         if($post){
+            foreach($post->tags as $tag)
+                 {
+                     $k[]=$tag;
+                }
+                 $p=collect([
                 'id'=>$post->id,
                 'title'=>$post->title,
                 'name'=>$post->user()->get()->first()->name,
@@ -52,6 +52,14 @@ class HomeController extends Controller
                 'featured'=>$post->featured
 
         ]);
+         }
+        else
+        {
+            $k=[];
+            $p=[];
+        }
+       //dd($k);
+       
         $projects=Project::orderBy('id','desc')->take(4)->get();
        // dd($projects);
 
