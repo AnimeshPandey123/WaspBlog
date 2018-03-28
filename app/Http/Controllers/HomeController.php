@@ -34,7 +34,7 @@ class HomeController extends Controller
         $po=Category::where('name','posts')->get();
         $post=$po->first()->posts()->get()->last();
         $pos=Category::where('name','documentations')->get();
-        $new=$pos->first()->posts()->latest()->get();
+        $new=$pos->first()->posts()->latest()->take(15)->get();
         //dd($new);
         //dd($post);
          $k=[];
