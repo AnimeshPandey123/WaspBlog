@@ -35,6 +35,7 @@ class HomeController extends Controller
         $post=$po->first()->posts()->get()->last();
         $pos=Category::where('name','documentations')->get();
         $new=$pos->first()->posts()->latest()->take(15)->get();
+        //dd($new[0]->id);
         //dd($new);
         //dd($post);
          $k=[];
@@ -43,7 +44,8 @@ class HomeController extends Controller
                  {
                      $k[]=$tag;
                 }
-                 $p=collect([
+                //dd($k);
+         $p=collect([
                 'id'=>$post->id,
                 'title'=>$post->title,
                 'name'=>$post->user()->get()->first()->name,

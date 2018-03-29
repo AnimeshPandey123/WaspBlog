@@ -15,9 +15,7 @@
  			<th>
  				Title
  			</th>
- 			<th>
- 				Edit
- 			</th>
+ 			
  			<th>
  				Restore
  			</th>
@@ -31,10 +29,12 @@
  				@foreach($posts as $post)
  				<tr>
  					<td>
+ 					@if($post->featured)
  					<img src="{{url($post->featured)}}" height="70px" width="90px">
+ 					@endif
  				</td>
  				<td>{{$post->title}}</td>
- 				<td>Edit</td>
+ 				
  				<td>
  				<a href="{{route('post.restore',['id'=>$post->id])}}" class="btn btn-xs btn-success" > Restore </a>
  			</td>

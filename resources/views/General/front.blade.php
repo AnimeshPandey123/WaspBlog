@@ -78,10 +78,20 @@
     				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 daily">
     					<h4 class="info-title"><i class="far fa-file"></i>&nbsp;&nbsp;Documentation</h4>
     					<div class="doc_links">
+    					@if($lpost)
     						@foreach($lpost as $last)
-    						<a href="{{route('documentation',['id'=>$post['id']])}}" class="links">{{$last->title}} - {{$last->created_at}}</a><br><br>
+    						<a href="{{route('documentation',['id'=>$last->id])}}" class="links">{{$last->title}} - {{$last->created_at}}</a><br><br>
     						@endforeach
-    					</div>
+    						</div>
+    					@else
+    						<div class="doc_links">
+    						
+    						<label>No Documents Created</label>
+    						
+    						</div>
+    					@endif
+    						
+    					
     				</div>
     			</div>
     		</div>

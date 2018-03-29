@@ -55,10 +55,8 @@ class PostController extends Controller
             'content'=>'required',
             'category_id'=>'required',
             'tags'=>'required'
-
-            
-
         ]);
+       // dd($request->tags);
         $category=Category::find($request->category_id);
        // dd($request->name);
         if(count($request->tags)>4)
@@ -79,12 +77,12 @@ class PostController extends Controller
             $featured_new_name    = '/' .$image->getClientOriginalName();
             // create new image with transparent background color
             //$background = Image::canvas(731, 274);
-         $image_resize = Image::make($image->getRealPath())->crop(731, 274);
+         $image_resize = Image::make($image->getRealPath());//->crop(731, 274);
                    
                // $background->insert($image_resize, 'bottom');
            
        //  $image_resize->crop(731, 274);
-         $image_resize->resizeCanvas(731, 274,'left');
+        /// $image_resize->resizeCanvas(731, 274,'left');
          //$image_resize->resizeCanvas(731, 274,'right');
          $image_resize->save(public_path().'/'.'uploads/posts' .$featured_new_name);
   //           $featured=$request->featured;
@@ -185,9 +183,9 @@ class PostController extends Controller
             $image = $request->file('featured');
             $featured_new_name    = '/' .$image->getClientOriginalName();
             
-            $image_resize = Image::make($image->getRealPath())->crop(731, 274);
+            $image_resize = Image::make($image->getRealPath());//->crop(731, 274);
     
-            $image_resize->resizeCanvas(731, 274,'left');
+            //$image_resize->resizeCanvas(731, 274,'left');
       
             $image_resize->save(public_path().'/'.'uploads/posts' .$featured_new_name);
             $post->featured='uploads/posts'.$featured_new_name;
@@ -218,6 +216,7 @@ class PostController extends Controller
       public function trashed()
     {
         $posts=Post::onlyTrashed()->get();
+       // dd($posts);
         return view('Admin.Posts.trashed')->with('posts',$posts);
     }
       public function kill($id)
@@ -246,7 +245,8 @@ class PostController extends Controller
         $post=post::find($id);
         $pos=Category::where('name','documentations')->get();
         $new=$pos->first()->posts()->latest()->get();
-         $p=collect([
+        if ($post) {
+            $p=collect([
                 'id'=>$post->id,
                 'title'=>$post->title,
                 'name'=>$post->user()->get()->first()->name,
@@ -255,6 +255,12 @@ class PostController extends Controller
                 'featured'=>$post->featured
 
         ]);
+        }
+        else
+        {
+            $p=[];
+        }
+        
         return view('General.documentation')->with('post',$p)
                                             ->with('doc',$new);
     }
@@ -268,22 +274,28 @@ class PostController extends Controller
         $l=$new->last();
         //dd($l);
         $k=[];
-        foreach($l->tags as $tag)
-        {
-            $k[]=$tag;
-        }
-     //  dd($k);
-       // dd($new->first()->id);
-       // dd($post->created_at);
-        $p=collect([
-                'id'=>$l->id,
-                'title'=>$l->title,
-                'name'=>$l->user()->get()->first()->name,
-                'created_at'=>$l->created_at,
-                'description'=>$l->content,
-                'featured'=>$l->featured
-
-        ]);
+       if($l)
+        { foreach($l->tags as $tag)
+               {
+                   $k[]=$tag;
+               }
+            //  dd($k);
+              // dd($new->first()->id);
+              // dd($post->created_at);
+               $p=collect([
+                       'id'=>$l->id,
+                       'title'=>$l->title,
+                       'name'=>$l->user()->get()->first()->name,
+                       'created_at'=>$l->created_at,
+                       'description'=>$l->content,
+                       'featured'=>$l->featured
+       
+               ]);
+           }
+           else
+           {
+            $p=[];
+           }
 
         $progressbar=[
            'danger',
@@ -306,8 +318,10 @@ class PostController extends Controller
         $new=$pos->first()->posts()->latest()->get();
        
         $k=[];
+        $p=[];
        // dd($post->tags);
-        foreach($post->tags as $tag)
+        if ($post) {
+            foreach($post->tags as $tag)
         {
             $k[]=$tag;
         }
@@ -323,6 +337,8 @@ class PostController extends Controller
 
         ]);
 
+        }
+       
          $progressbar=[
            'danger',
            'success',
