@@ -64,6 +64,21 @@ class ProjectController extends Controller
     }
     public function projects()
     {
-    	return view('General.projects')->with('projects',Project::all());
+
+        $progressbar=[
+           'danger',
+           'success',
+           'info',
+           'warning'
+        ];
+        $icons = [
+        'graduation-cap',
+        'archive',
+       'graduation-cap',
+         'table',
+    ];
+    	return view('General.projects')->with('projects',Project::all())
+                                      ->with('progress',$progressbar)
+                                      ->with('icons',$icons);
     }
 }

@@ -64,8 +64,8 @@
     					<div class="text-center">
     					@foreach($projects as $project)
     						<div class="pro text-danger" style="">
-    							<i class="fa fa-{{$icons[$loop->index]}}" style="font-size:2.4em;"></i><br>
-    							<h5 style="font-size:1.5em;" class="text-center spanis-{{$project->id}}">{{$project->title}}</h5>
+    							<i class="fa fa-{{$icons[$loop->index]}} text-{{$progress[$loop->index]}}" style="font-size:2.4em;"></i><br>
+    							<h5 style="font-size:1.5em;" class="text-center spanis-{{$loop->index}}">{{$project->title}}</h5>
     							<div class="progress">
     						 		<div class="progress-bar progress-bar-{{$progress[$loop->index]}}" role="progressbar" style="width:{{{ $project['status'] }}}%;"></div>
     							</div>

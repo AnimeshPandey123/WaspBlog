@@ -99,6 +99,10 @@
                             <i class="fa fa-files-o"></i>&nbsp;
                             <a href=" {{route('posts')}} " class="walter">All posts</a>
                         </li> 
+                         <li class="list-group-item sido">
+                            <i class="fa fa-files-o"></i>&nbsp;
+                            <a href=" {{route('documentations')}} " class="walter">All Documentations</a>
+                        </li> 
                         <li class="list-group-item sido">
                             <i class="fa fa-map-signs"></i>&nbsp;
                             <a href=" {{route('categories')}} " class="walter">Categories</a>

@@ -48,16 +48,16 @@
 				    width: 100%;
 				    background-size: cover;
 			}
-		.spanis-1{
+		.spanis-0{
 			 color: red;
 		}
-		.spanis-2{
+		.spanis-1{
 			 color: green;
 		}
-		.spanis-3{
+		.spanis-2{
 			 color: blue;
 		}
-		.spanis-4{
+		.spanis-3{
 			 color: yellow;
 		}
 		</style>

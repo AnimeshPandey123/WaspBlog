@@ -71,6 +71,7 @@ Route::get('/tag/edit/{id}', 'TagController@edit')->name('tag.edit');
 Route::post('/tag/update/{id}', 'TagController@update')->name('tag.update');
 Route::get('/tag/delete/{id}', 'TagController@destroy')->name('tag.delete');
 
+Route::get('/documentations', 'DocumentationController@index')->name('documentations');
 
 //Route::get('/users','UsersController@index')->name('users');
 //Route::get('/users/create','UsersController@create')->name('user.create');

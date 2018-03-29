@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Tag;
-use Session;
-use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
 
-class PostController extends Controller
+class DocumentationController extends Controller
+
 {
      /**
      * Display a listing of the resource.
@@ -20,11 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post=Category::where('name','posts')->get();
+        $post=Category::where('name','documentations')->get();
          $posts=$post->first()->posts()->latest()->get();
         //dd($post->first());
 
-        return view('Admin.Posts.index')->with('posts',$posts);
+        return view('Admin.Documentations.index')->with('posts',$posts);
     }
 
     /**
@@ -268,95 +263,7 @@ class PostController extends Controller
         return view('General.documentation')->with('post',$p)
                                             ->with('doc',$new);
     }
-    public function posts()
-    {
-
-        $pos=Category::where('name','Posts')->get();
-        //dd($pos);
-        $new=$pos->first()->posts()->latest()->get();
-        //dd($new);
-        $l=$new->last();
-        //dd($l);
-        $k=[];
-       if($l)
-        { foreach($l->tags as $tag)
-               {
-                   $k[]=$tag;
-               }
-            //  dd($k);
-              // dd($new->first()->id);
-              // dd($post->created_at);
-               $p=collect([
-                       'id'=>$l->id,
-                       'title'=>$l->title,
-                       'name'=>$l->user()->get()->first()->name,
-                       'created_at'=>$l->created_at,
-                       'description'=>$l->content,
-                       'featured'=>$l->featured
-       
-               ]);
-           }
-           else
-           {
-            $p=[];
-           }
-
-        $progressbar=[
-           'danger',
-           'success',
-           'info',
-           'warning'
-        ];
-
-       //dd($p);
-        return view('General.blog_post')->with('posts',Post::all())
-                                   ->with('post',$p)
-                                    ->with('lpost',$new)
-                                    ->with('tags',$k)
-                                    ->with('progress',$progressbar);
-    }
-    public function  single($id)
-    {
-        $post=Post::find($id);
-        $pos=Category::where('name','Posts')->get();
-        $new=$pos->first()->posts()->latest()->get();
-       
-        $k=[];
-        $p=[];
-       // dd($post->tags);
-        if ($post) {
-            foreach($post->tags as $tag)
-        {
-            $k[]=$tag;
-        }
-       // dd($new->first()->id);
-       // dd($post->created_at);
-        $p=collect([
-                'id'=>$post->id,
-                'title'=>$post->title,
-                'name'=>$post->user()->get()->first()->name,
-                'created_at'=>$post->created_at,
-                'description'=>$post->content,
-                'featured'=>$post->featured
-
-        ]);
-
-        }
-       
-         $progressbar=[
-           'danger',
-           'success',
-           'info',
-           'warning'
-        ];
-
-      //  dd($p['description']);
-        return view('General.blog_post')->with('posts',Post::all())
-                                   ->with('post',$p)
-                                    ->with('lpost',$new)
-                                    ->with('tags',$k)
-                                    ->with('progress',$progressbar);
-    } 
-
     
+
+
 }
