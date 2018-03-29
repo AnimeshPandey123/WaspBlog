@@ -50,14 +50,15 @@ class ProjectController extends Controller
             'status'=>'required',
             'content'=>'required',
                    ]);
-          //dd($request->title);
+          //dd($request->status);
       $user=Auth::user();
       //dd($user->id);
        $project=Project::find($id);
        $project->title=$request->title;
        $project->status=$request->status;
        $project->user_id=$user->id;
-       $project->description=$request->description;
+       $project->description=$request->content;
+       $project->save();
              Session::flash('success','your project is updated');
         return redirect()->back();
     }

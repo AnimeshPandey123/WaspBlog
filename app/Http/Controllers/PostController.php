@@ -8,10 +8,7 @@ use Session;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
-// include composer autoload
-//require 'vendor/autoload.php';
-
-// import the Intervention Image Manager Class
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
@@ -180,11 +177,20 @@ class PostController extends Controller
          $post=Post::find($id);
          if($request->hasFile('featured'))
          {
-              $featured=$request->featured;
-
-        $featured_new_name='/' . $request->file('featured')->getClientOriginalName();
-
-        $featured->move('uploads/posts',$featured_new_name);
+            $file= $post->featured;
+            $filename = asset($file);
+            
+            Storage::delete($filename);
+            // \File::delete($filename);
+            $image = $request->file('featured');
+            $featured_new_name    = '/' .$image->getClientOriginalName();
+            
+            $image_resize = Image::make($image->getRealPath())->crop(731, 274);
+    
+            $image_resize->resizeCanvas(731, 274,'left');
+      
+            $image_resize->save(public_path().'/'.'uploads/posts' .$featured_new_name);
+            $post->featured='uploads/posts'.$featured_new_name;
          }
          $post->title=$request->title;
          $post->content=$request->content;
