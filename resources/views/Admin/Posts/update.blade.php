@@ -3,7 +3,8 @@
 @section('content')
 @include('Admin.includes.error')
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
+			<i class="fa fa-edit"></i>&nbsp;
 			Edit the post: {{$post->title}}
 		</div>
 		<div class="panel-body">
@@ -12,11 +13,11 @@
 
 					<div class="form-group">
 						<label for="title">Edit Title</label>
-				<input type="text" name="title" class="form-control" value="{{$post->title}}">
+						<input type="text" name="title" class="form-control boxe" value="{{$post->title}}">
 					</div>
 						<div class="form-group">
 						<label for="category">Select a category</label>
-						<select name="category_id" id="category" class="form-control"> 
+						<select name="category_id" id="category" class="form-control boxe"> 
 							@foreach($categories as $category)
 								<option value="{{ $category->id }}"
 
@@ -30,7 +31,7 @@
 						
 					<div class="form-group">
 						<label for="feature">Featured Image</label>
-						<input type="file" name="featured" class="form-control">
+						<input type="file" name="featured" class="form-control boxe">
 						<div class="form-group">
 							<label for="tags">Select Tags</label>
 								@foreach($tags as $tag)
@@ -49,11 +50,14 @@
 					</div>
 						<div class="form-group">
 						<label for="content">Edit Content</label>
-						<textarea name="content" id="content" cols="5" rows="10" class="form-control" >{{$post->content}}</textarea>
+						<textarea name="content" id="content" cols="5" rows="10" class="form-control boxe" >{{$post->content}}</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">
-							<button class="btn btn-success" type="submit" >Update</button>
+							<button class="btn btn-success greenboi" type="submit" >
+								<i class="fa fa-save"></i>&nbsp;
+								Update
+							</button>
 
 						</div>
 

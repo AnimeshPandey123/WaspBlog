@@ -3,7 +3,8 @@
 @section('content')
 @include('Admin.includes.error')
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
+			<i class="fa fa-file-text"></i>&nbsp;
 			Create Post
 		</div>
 		<div class="panel-body">
@@ -12,11 +13,11 @@
 
 					<div class="form-group">
 						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control">
+						<input type="text" name="title" class="form-control boxe">
 					</div>
 							<div class="form-group">
 						<label for="category">Select a category</label>
-						<select name="category_id" id="category" class="form-control"> 
+						<select name="category_id" id="category" class="form-control boxe"> 
 							@foreach($categories as $category)
 								<option value="{{ $category->id }}">{{ $category->name }}</option>
 							@endforeach
@@ -24,7 +25,7 @@
 					</div>
 					<div class="form-group">
 						<label for="feature">Featured Image</label>
-						<input type="file" name="featured" class="form-control">
+						<input type="file" name="featured" class="form-control boxe">
 					</div>
 				
 						<div class="form-group">
@@ -37,11 +38,14 @@
 					</div> 
 						<div class="form-group">
 						<label for="content">Content</label>
-						<textarea name="content" id="content" cols="10" rows="10" class="form-control"></textarea>
+						<textarea name="content" id="content" cols="10" rows="10" class="form-control boxe"></textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">
-							<button class="btn btn-success" type="submit" >Post Now</button>
+							<button class="btn btn-success greenboi" type="submit" >
+								<i class="fa fa-upload"></i>
+								Post Now
+							</button>
 
 						</div>
 

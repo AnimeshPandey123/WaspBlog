@@ -12,10 +12,11 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 		<title>Blog | WASP</title>
-		  <!-- Styles -->
+		 
+		<!-- Styles -->
      
-    <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Bootstrap 4.0 and Paper kit CSS -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -48,18 +49,18 @@
 				    width: 100%;
 				    background-size: cover;
 			}
-		.spanis-0{
-			 color: red;
-		}
-		.spanis-1{
-			 color: green;
-		}
-		.spanis-2{
-			 color: blue;
-		}
-		.spanis-3{
-			 color: yellow;
-		}
+			.spanis-0{
+				 color: red;
+			}
+			.spanis-1{
+				 color: green;
+			}
+			.spanis-2{
+				 color: blue;
+			}
+			.spanis-3{
+				 color: yellow;
+			}
 		</style>
 	</head>
 
@@ -78,7 +79,7 @@
 		        <div class="collapse navbar-collapse" id="navbarToggler">
 		            <ul class="navbar-nav ml-auto">
 	                    <li class="nav-item">
-	                        <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="" target="_blank">
+	                        <a class="nav-link" href="https://github.com/AakashRajDahal" title="Star on Github">
 	                            <i class="fab fa-github-alt"></i>
 	                        </a>
 	                    </li>
@@ -88,10 +89,10 @@
 		                    </a>
 		                </li>
 		                <li class="nav-item">
-		                	 @guest
+		                	@guest
 		                    <a href="{{route('login')}}" title="Login" class="nav-link">
 		                    	@else
-		                    	<a href="{{route('home')}}" title="Login" class="nav-link">
+		                    	<a href="{{route('home')}}" title="Go to Admin Panel" class="nav-link">
 		                    	@endguest
 		                    	<i class="fa fa-user-circle"></i>
 		                    </a>
@@ -108,10 +109,14 @@
     			<div class="container">
     				<div class="row">
     					<div class="col-lg-6 col-md-6 col-sm-12">
-    						<h3 class="text-danger">
+    						<h4 class="text-danger">
     							<i class="fa fa-rss"></i>&nbsp;
     							Designed by Aakash Raj Dahal
-    						</h3>
+    						</h4>
+    						<h4 class="text-danger">
+    							<i class="fa fa-cogs"></i>&nbsp;&nbsp;
+    							Developed by Animesh Pandey
+    						</h4>
     						<br>
     						
     					</div>
@@ -130,7 +135,7 @@
     				<div class="text-center">
     					<div class="row">
     						<h6>&copy; 2018. All Rights Reserved | &nbsp;</h6>
-    						<a href="{{route('contact')}}">CONTACT US</a>
+    						<a href="{{route('contact')}}" style="color:#fff;font-weight:bold;font-size:0.9em;">CONTACT US</a>
     					</div>
     				</div>
     			</div>
@@ -154,17 +159,11 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
 
-	<!-- JQuery and Popper.js -->
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
   	<!-- jQuery and jQuery UI -->
 		<script src="{{asset('js/jquery-3.2.1.js')}}" type="text/javascript"></script>
 		<script src="{{asset('js/jquery-ui-1.12.1.custom.min.js')}}" type="text/javascript"></script>
 
 	<!--  Paper Kit Initialization snd functons -->
-		
-
 	<!--  Plugins for Slider -->
 		<script src="{{asset('js/nouislider.min.js')}}"></script>
 
@@ -175,9 +174,12 @@
 		<script type="text/javascript">
 			$('[data-toggle="tooltip"]').tooltip();
 		</script>
-		<!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src=" {{asset('js/toastr.min.js')}} "></script>
+
+	<!-- More Scripts -->
+	    <script src="{{ asset('js/app.js') }}"></script>
+	    <script src=" {{asset('js/toastr.min.js')}} "></script>
+
+
     <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")

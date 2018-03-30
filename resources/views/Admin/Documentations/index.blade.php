@@ -3,7 +3,7 @@
  
  	
  		<div class="panel panel-primary">
- 			<div class="panel-heading">
+ 			<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
  				Published posts
  			</div>
  			<div class="panel-body">
@@ -16,10 +16,10 @@
  				Category
  			</th>
  			<th>
- 				Edit
+ 				
  			</th>
  			<th>
- 				Trash
+ 				
  			</th>
  		</thead>
  			<tbody>
@@ -30,10 +30,16 @@
  				<td>{{$post->title}}</td>
  				<td>{{$post->category->name}}</td>
  				<td>
-						<a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-xs btn-info" > Edit </a>
+						<a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-xs btn-info blueboi" > 
+							<i class="fa fa-edit"></i>&nbsp;
+							Edit 
+						</a>
  				</td>
  				<td>
- 				<a href="{{route('post.delete',['id'=>$post->id])}}" class="btn btn-xs btn-danger" > Trash </a>
+ 				<a href="{{route('post.delete',['id'=>$post->id])}}" class="btn btn-xs btn-danger redboi" > 
+ 					<i class="fa fa-trash"></i>&nbsp;
+ 					Trash 
+ 				</a>
  			</td>
  				</tr>
  				
@@ -42,8 +48,8 @@
  			@else
  			<tr>
  					<th colspan="5" class="text-center">
- 						No post
- 						</th>
+ 						No Documentations YET
+ 					</th>
  					
  				</tr>
  				@endif

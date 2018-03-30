@@ -23,7 +23,6 @@
 			</div>
 		</div>
 
-		<br><br>
     @stop
     @yield('scripts')
 

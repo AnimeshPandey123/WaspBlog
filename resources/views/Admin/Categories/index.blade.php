@@ -3,7 +3,7 @@
  
  	
  		<div class="panel panel-primary">
- 			<div class="panel-heading">
+ 			<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
  				Categories
  			</div>
  			<div class="panel-body">
@@ -13,10 +13,10 @@
  				Category name
  			</th>
  			<th>
- 				Editing
+ 				
  			</th>
  			<th>
- 				Deleting
+ 				
  			</th>
  		</thead>
  			<tbody>
@@ -28,13 +28,14 @@
  						{{$category->name}}
  					</td>
  					<td>
- 						<a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-xs btn-info">
+ 						<a href="{{route('category.edit',['id'=>$category->id])}}" class="btn btn-xs btn-info blueboi">
+ 							<i class="fa fa-edit"></i>&nbsp;
  							Edit
-
  						</a>
  					</td>
  					<td>
- 						<a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-xs btn-danger">
+ 						<a href="{{route('category.delete',['id'=>$category->id])}}" class="btn btn-xs btn-danger redboi">
+ 							<i class="fa fa-trash"></i>&nbsp;
  							Delete
  						</a>
  					</td>
@@ -44,7 +45,7 @@
  				@else
  				<tr>
  					<th colspan="5" class="text-center">
- 						No Categories yet
+ 						No Categories yet my bruddha
  						</th>
  					
  				</tr>

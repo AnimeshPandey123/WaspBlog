@@ -13,9 +13,9 @@
 
 		<title>Blog | WASP</title>
 		  <!-- Styles -->
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href=" {{ asset('css/toastr.min.css') }} ">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Bootstrap 4.0 and Paper kit CSS -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -86,10 +86,14 @@
     			<div class="container">
     				<div class="row">
     					<div class="col-lg-6 col-md-6 col-sm-12">
-    						<h3 class="text-danger">
-    							<i class="fa fa-rss"></i>&nbsp;
+    						<h4 class="text-danger">
+    							<i class="fa fa-paint-brush"></i>&nbsp;
     							Designed by Aakash Raj Dahal
-    						</h3>
+    						</h4>
+                            <h4 class="text-danger">
+                                <i class="fa fa-cogs"></i>&nbsp;
+                                Developed by Animesh Pandey
+                            </h4>
     						<br>
     						
     					</div>
@@ -108,7 +112,10 @@
     				<div class="text-center">
     					<div class="row">
     						<h6>&copy; 2018. All Rights Reserved | &nbsp;</h6>
-    						<a href="{{route('contact')}}">CONTACT US</a>
+    						<a href="{{route('contact')}}" style="color:#fff;font-weight:bold;font-size:0.9em;">
+                                <i class="fa fa-phone"></i>
+                                CONTACT US
+                            </a>
     					</div>
     				</div>
     			</div>

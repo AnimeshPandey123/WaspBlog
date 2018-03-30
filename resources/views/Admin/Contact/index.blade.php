@@ -47,8 +47,8 @@
  
  	
  		<div class="panel panel-primary">
- 			<div class="panel-heading">
- 				Sent Message
+ 			<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
+ 				Inbox
  			</div>
  			<div class="panel-body">
  			<table class="table table-hover">	
@@ -62,7 +62,7 @@
  			</th>
  			
  			<th>
- 				Trash
+ 				
  			</th>
  		</thead>
  			<tbody>
@@ -74,19 +74,21 @@
  				<td>{{$message->description}}</td>
  				
  				<td>
- 				<a href="{{route('message.delete',['id'=>$message->id])}}" class="btn btn-xs btn-danger" > Trash </a>
+ 				<a href="{{route('message.delete',['id'=>$message->id])}}" class="btn btn-xs btn-danger redboi" >
+                     <i class="fa fa-trash"></i>&nbsp;
+                    Trash 
+                </a>
  			</td>
  				</tr>
  				
 
  				@endforeach
  			@else
- 			<tr>
- 					<th colspan="5" class="text-center">
- 						No project
- 						</th>
- 					
- 				</tr>
+     			<tr>
+    				<th colspan="5" class="text-center">
+    					FOREVER ALONE :'(
+    				</th>	
+     			</tr>
  			@endif
  			</tbody>
 

@@ -3,7 +3,8 @@
  
  	
  		<div class="panel panel-primary" style="">
- 			<div class="panel-heading">
+ 			<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
+ 				<i class="fa fa-trash"></i>&nbsp;
  				Trashed posts
  			</div>
  			<div class="panel-body">
@@ -36,10 +37,15 @@
  				<td>{{$post->title}}</td>
  				
  				<td>
- 				<a href="{{route('post.restore',['id'=>$post->id])}}" class="btn btn-xs btn-success" > Restore </a>
+ 				<a href="{{route('post.restore',['id'=>$post->id])}}" class="btn btn-xs btn-success greenboi" > 		<i class="fa fa-upload"></i>&nbsp;
+ 					Restore 
+ 				</a>
  			</td>
  			<td>
- 				<a href="{{route('post.kill',['id'=>$post->id])}}" class="btn btn-xs btn-danger" > Delete </a>
+ 				<a href="{{route('post.kill',['id'=>$post->id])}}" class="btn btn-xs btn-danger redboi" > 
+ 					<i class="fa fa-trash"></i>&nbsp;
+ 					Delete 
+ 				</a>
  			</td>
  				</tr>
  				
@@ -49,7 +55,7 @@
  				<tr>
  					<th colspan="5" class="text-center">
  						No trashed post
- 						</th>
+ 					</th>
  					
  				</tr>
  			@endif
@@ -60,6 +66,4 @@
  			</div>
  			
  		</div>
- 		
-
 @stop
