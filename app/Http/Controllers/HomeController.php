@@ -50,7 +50,7 @@ class HomeController extends Controller
                 'title'=>$post->title,
                 'name'=>$post->user()->get()->first()->name,
                 'created_at'=>$post->created_at,
-                'description'=>substr(str_limit($post->content,300),0,-70),
+                'description'=>str_limit($post->content,300),
                 'featured'=>$post->featured
 
         ]);
