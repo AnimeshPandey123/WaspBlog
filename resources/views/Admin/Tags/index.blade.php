@@ -3,7 +3,8 @@
  
  	
  		<div class="panel panel-primary">
- 			<div class="panel-heading">
+ 			<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;"> 
+ 				<i class="fa fa-tags"></i>&nbsp;
  				Tags
  			</div>
  			<div class="panel-body">
@@ -13,10 +14,10 @@
  				Tags name
  			</th>
  			<th>
- 				Editing
+ 				
  			</th>
  			<th>
- 				Deleting
+ 				
  			</th>
  		</thead>
  			<tbody>
@@ -28,13 +29,14 @@
  						{{$tag->tag}}
  					</td>
  					<td>
- 						<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-xs btn-info">
+ 						<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-xs btn-info blueboi">
+ 							<i class="fa fa-edit"></i>&nbsp;
  							Edit
-
  						</a>
  					</td>
  					<td>
- 						<a href="{{route('tag.delete',['id'=>$tag->id])}}" class="btn btn-xs btn-danger">
+ 						<a href="{{route('tag.delete',['id'=>$tag->id])}}" class="btn btn-xs btn-danger redboi">
+ 							<i class="fa fa-trash"></i>&nbsp;
  							Delete
  						</a>
  					</td>

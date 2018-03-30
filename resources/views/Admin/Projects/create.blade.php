@@ -3,7 +3,8 @@
 @section('content')
 @include('Admin.includes.error')
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
+			<i class="fa fa-plus"></i>&nbsp;
 			Create Projects
 		</div>
 		<div class="panel-body">
@@ -12,24 +13,25 @@
 
 					<div class="form-group">
 						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control">
+						<input type="text" name="title" class="form-control boxe">
 					</div>
 
 					<div class="slidecontainer">
 						<label>Status</label>
 						<p>Percentage of Completion: <span id="demo" for="status"></span></p>
   						<input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="status">
-  							
-							</div>
-						 
+					</div>
+						 <br>
 					<div class="form-group">
 						<label for="content">Description</label>
 						<textarea name="content" id="content" cols="10" rows="10" class="form-control"></textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">
-							<button class="btn btn-success" type="submit" >Post Now</button>
-
+							<button class="btn btn-success greenboi" type="submit">
+								<i class="fa fa-upload"></i>&nbsp;
+								Post Now
+							</button>
 						</div>
 
 					</div>

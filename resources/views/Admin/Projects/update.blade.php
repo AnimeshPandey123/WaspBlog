@@ -3,7 +3,7 @@
 @section('content')
 @include('Admin.includes.error')
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color:#3498db;border:1px solid #3498db;">
 			Create Projects
 		</div>
 		<div class="panel-body">
@@ -12,23 +12,25 @@
 
 					<div class="form-group">
 						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control" value="{{$project->title}}">
+						<input type="text" name="title" class="form-control boxe" value="{{$project->title}}">
 					</div>
 					<div class="slidecontainer">
 						<label>Status</label>
 						<p>Percentage of Completion: <span id="demo" for="status"></span></p>
   						<input type="range" min="1" max="100" class="slider" id="myRange" name="status" value="{{$project->status}}">
   							
-							</div>
-						 
+					</div>
+						 <br>
 					<div class="form-group">
-						<label for="content"></label>
+						<label for="content">Description</label>
 						<textarea name="content" id="content" cols="10" rows="10" class="form-control">{!!$project->description!!}</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">
-							<button class="btn btn-success" type="submit" >Update Now</button>
-
+							<button class="btn btn-success greenboi" type="submit" >
+								<i class="fa fa-save"></i>&nbsp;
+								Update Now
+							</button>
 						</div>
 
 					</div>

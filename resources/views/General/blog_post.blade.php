@@ -1,8 +1,6 @@
 @extends('General.index2')
 @section('content')
 
-		<br><br>
-
 		<div class="container downloads">
 			<div class="row">
 			@if($post)
@@ -41,7 +39,5 @@
 				</div>
 			</div>
 		</div>
-
-		<br><br>
     	
-    		@endsection
+   @endsection

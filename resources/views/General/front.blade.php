@@ -1,15 +1,19 @@
 @extends('General.index')
 @section('content')
 <div class="page-header" data-parallax="true" style="background-image: url('images/mainImage.png');">	
-				<div class="filter"></div>
+		<div class="filter"></div>
 			<div class="container">
 			    <div class="motto text-center">
 			        <h1 class="logo">We are Sudo Programmers</h1>
-			        <h3>Design | Develop | Learn</h3>
+			        <h3 style="font-weight:bold;">Design | Develop | Learn</h3>
 			        <br />
-			        <a href="{{route('downloads')}}" class="btn btn-outline-neutral btn-round"><i class="fa fa-download"></i>&nbsp;Downloads</a>
-			        &nbsp;&nbsp;
-			        <a href="{{route('projects.general')}}" class="btn btn-outline-neutral btn-round">Projects</a>
+			        <a href="{{route('downloads')}}" class="btn btn-outline-neutral btn-round">
+			        	<i class="fa fa-download"></i>&nbsp;
+			        	Downloads
+			        </a>&nbsp;&nbsp;
+			        <a href="{{route('projects.general')}}" class="btn btn-outline-neutral btn-round">
+			        	Projects
+			        </a>
 			    </div>
 			</div>
     	</div>
@@ -21,7 +25,6 @@
     			<div class="row">
     				<div class="col-lg-6 col-md-6 col-sm-12">
     				@if($post)
-    				
     					<div class="blog">
     						<div class="image">
     							<img src="{{asset($post['featured'])}}" style="width:100%;">
@@ -103,10 +106,10 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/aakash.jpg')}}" class="profile image-fluid">
 							<h4>Aakash Raj Dahal</h4><br>
-							<h6>UI/UX Designer</h6>
+							<h6>UI/UX & Frontend Developer</h6>
 							<p>
-								He does most of the designing work for the products of WASP.
-								From HTML and CSS to designing graphics using Photoshop and Illustrator, he does it all.
+								He does all of the designing work for the products of WASP.
+								From HTML and CSS in the front end part to designing graphics using Photoshop and Illustrator, he does it all.
 							</p>
 							<br>
 							<a href="https://www.facebook.com/akashraj.dahal" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
@@ -117,7 +120,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/animesh.jpg')}}" class="profile image-fluid">
 							<h4>Animesh Pandey</h4><br>
-							<h6>BACKEND DEVELOPER</h6>
+							<h6>API & BACKEND DEVELOPER</h6>
 							<p>
 								He loves to code and makes a lot of mistakes.
 								But eventually he learns and makes WASP products run smoothly under the hood without any problems.
@@ -132,10 +135,10 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 boi">
 							<img src="{{asset('images/prayush.jpg')}}" class="profile">
 							<h4>Prayush Bijukchhe</h4><br>
-							<h6>FULL STACK DEVELOPER</h6>
+							<h6>FULL STACK WEB DEVELOPER</h6>
 							<p>
 								He is the master of several Programming Languages. 
-								In his spare time, he jams with the peeps at work singing very loudly and disturbing his team.
+								He teaches the team whenever someone needs help with Programming and in his free time, jams the Guitar.
 							</p>
 							<br>
 							<a href="https://www.facebook.com/bprayush" style="color:#fff;"><i class="fab fa-facebook"  style="margin-left:20px;margin-right:20px;"></i></a>
@@ -151,7 +154,7 @@
 							<h4>Suresh Ghimire</h4><br>
 							<h6>PROJECT MANAGER</h6>
 							<p>
-								He is the guy that comes up with all the plans and products.
+								He is the guy with the plan.
 								He is responsible for communicating with other teams at Karkhana and making sure everything runs smoothly in the team.
 							</p>
 							<br>
