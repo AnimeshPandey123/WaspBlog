@@ -4,7 +4,7 @@
 			<div class="row">
             @if($post)
 				<div class="col-9" style="">
-					<h4 class="text-info">Digital Scrum Board - {{$post['created_at']}}</h4>
+					<h4 class="text-info">{{$post['title']}} - {{$post['created_at']}}</h4>
 					<br>
 					<i class="fa fa-user"></i>{{$post['name']}}<br><br>
 					<ul>
