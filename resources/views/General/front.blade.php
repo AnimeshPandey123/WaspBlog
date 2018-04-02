@@ -83,7 +83,7 @@
     					<div class="doc_links">
     					@if($lpost)
     						@foreach($lpost as $last)
-    						<a href="{{route('documentation',['id'=>$last->id])}}" class="links">{{$last->title}} - {{$last->created_at}}</a><br><br>
+    						<a href="{{route('documentation',['id'=>$last->id])}}" class="links">{{$last->title}}</a><br><br>
     						@endforeach
     						</div>
     					@else

@@ -4,7 +4,7 @@
 			<div class="row">
             @if($post)
 				<div class="col-9" style="">
-					<h4 class="text-info">{{$post['title']}} - {{$post['created_at']}}</h4>
+					<h4 class="text-info">{{$post['title']}}</h4>
 					<br>
 					<i class="fa fa-user"></i>{{$post['name']}}<br><br>
 					<ul>
@@ -20,7 +20,7 @@
 					<h4 class="info-title"><i class="fa fa-file"></i>&nbsp;&nbsp;Documentation</h4>
 					<div class="doc_links">
 						@foreach($doc as $docs)
-						<a href="{{route('documentation',['id'=>$docs->id])}}" class="links">{{$docs->title }}- {{$docs->created_at}}</a><br><br>
+						<a href="{{route('documentation',['id'=>$docs->id])}}" class="links">{{$docs->title }}</a><br><br>
 						@endforeach
 					</div>
 				</div>
