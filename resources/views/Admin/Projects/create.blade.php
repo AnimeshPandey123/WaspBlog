@@ -24,7 +24,9 @@
 						 <br>
 					<div class="form-group">
 						<label for="content">Description</label>
-						<textarea name="content" id="content" cols="10" rows="10" class="form-control"></textarea>
+						<textarea name="content" id="content" cols="10" rows="10" class="form-control">
+							{{ old('content') }}
+						</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">

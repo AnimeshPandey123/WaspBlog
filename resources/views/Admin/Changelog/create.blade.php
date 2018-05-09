@@ -33,7 +33,9 @@
 					</div>
 						<div class="form-group">
 						<label for="desecription">Description</label>
-						<textarea name="description" id="content" cols="10" rows="10" class="form-control boxe"></textarea>
+						<textarea name="description" id="content" cols="10" rows="10" class="form-control boxe">
+							{{ old('content') }}
+						</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">

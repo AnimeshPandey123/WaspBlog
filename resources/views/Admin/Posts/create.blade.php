@@ -13,7 +13,7 @@
 
 					<div class="form-group">
 						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control boxe">
+						<input type="text" name="title" value="{{ old('title') }}" class="form-control boxe">
 					</div>
 							<div class="form-group">
 						<label for="category">Select a category</label>
@@ -38,7 +38,9 @@
 					</div> 
 						<div class="form-group">
 						<label for="content">Content</label>
-						<textarea name="content" id="content" cols="10" rows="10" class="form-control boxe"></textarea>
+						<textarea name="content" id="content" cols="10" rows="10" class="form-control boxe">
+							{{ old('content') }}
+						</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-center">
