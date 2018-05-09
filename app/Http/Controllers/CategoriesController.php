@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Category;
 use Illuminate\Http\Request;
 use Session;
+
 class CategoriesController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('Admin.Categories.index')->with('categories',Category::all());
+        return view('Admin.Categories.index')->with('categories', Category::all());
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoriesController extends Controller
     public function create()
     {
         return view('Admin.Categories.create');
-        
+
     }
 
     /**
@@ -35,15 +37,14 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required'
-
+        $this->validate($request, [
+            'name' => 'required',
 
         ]);
-        $category= new Category;
-        $category->name=$request->name;
+        $category       = new Category;
+        $category->name = $request->name;
         $category->save();
-        Session::flash('success','Your Category is created');
+        Session::flash('success', 'Your Category is created');
         return redirect()->back();
     }
 
@@ -66,8 +67,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category=Category::find($id);
-        return view('admin.categories.edit')->with('categories',$category);
+        $category = Category::find($id);
+        return view('admin.categories.edit')->with('categories', $category);
     }
 
     /**
@@ -79,11 +80,11 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categories=Category::find($id);
-        $categories->name=$request->name;
+        $categories       = Category::find($id);
+        $categories->name = $request->name;
         $categories->save();
-        Session::flash('success','Your Category is updated');
-      return redirect()->route('categories');
+        Session::flash('success', 'Your Category is updated');
+        return redirect()->route('categories');
 
     }
 
@@ -95,14 +96,14 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $categories=Category::find($id);
-        foreach($categories->posts as $post)
+        $categories = Category::find($id);
+        foreach ($categories->posts as $post)
         {
             $post->forceDelete();
         }
         $categories->delete();
 
-        Session::flash('nope','Your Category is deleted');
+        Session::flash('nope', 'Your Category is deleted');
 
         return redirect()->route('categories');
     }

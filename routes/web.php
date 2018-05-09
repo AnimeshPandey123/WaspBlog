@@ -73,15 +73,6 @@ Route::get('/tag/delete/{id}', 'TagController@destroy')->name('tag.delete');
 
 Route::get('/documentations', 'DocumentationController@index')->name('documentations');
 
-//Route::get('/users','UsersController@index')->name('users');
-//Route::get('/users/create','UsersController@create')->name('user.create');
-//Route::post('/users/store','UsersController@store')->name('user.store');
-//Route::get('/users/admin/{id}','UsersController@admin')->name('user.admin');
-//Route::get('/users/notadmin/{id}','UsersController@notadmin')->name('user.not.admin');
-//Route::get('/users/profile','ProfileController@index')->name('user.profile');
-//Route::post('/users/profile','ProfileController@update')->name('user.profile.update');
-//Route::get('/users/profile/delete/{id}','UsersController@destroy')->name('user.delete');
-
 
 Route::post('/projects',[
 	'uses'=>'ProjectController@store',
@@ -102,4 +93,18 @@ Route::get('project/delete/{id}','ProjectController@delete')->name('project.dele
 Route::get('messages','ContactController@getall')->name('message');
 Route::get('messages/show/{id}','ContactController@show')->name('message.show');
 Route::get('messages/delete/{id}','ContactController@destroy')->name('message.delete');
+
+Route::get('changelogs','ChangelogController@index')->name('changelogs');
+Route::get('/changelog/create',[
+	'uses'=>'ChangelogController@create',
+     'as'=>'changelog.create'
+
+	]);
+Route::post('/changelog/store',[
+	'uses'=>'ChangelogController@store', 
+     'as'=>'changelog.store'
+]);
+Route::get('/changelog/edit/{id}','ChangelogController@edit')->name('changelog.edit');
+Route::post('/changelog/update/{id}','ChangelogController@update')->name('changelog.update');
+Route::get('changelog/delete/{id}','ChangelogController@destroy')->name('changelog.delete');
 });

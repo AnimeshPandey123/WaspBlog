@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use App\Project;
 use App\Category;
-use Illuminate\Http\Request;
-use HTML;
+use App\Project;
 
 class HomeController extends Controller
 {
@@ -31,68 +28,66 @@ class HomeController extends Controller
     public function home()
     {
         //$po=Post::get();
-        $po=Category::where('name','posts')->get();
-        $post=$po->first()->posts()->get()->last();
-        $pos=Category::where('name','documentations')->get();
-        $new=$pos->first()->posts()->latest()->take(15)->get();
+        $po   = Category::where('name', 'posts')->get();
+        $post = $po->first()->posts()->get()->last();
+        $pos  = Category::where('name', 'documentations')->get();
+        $new  = $pos->first()->posts()->latest()->take(10)->get();
         //dd($new[0]->id);
         //dd($new);
         //dd($post);
-         $k=[];
-         if($post){
-            foreach($post->tags as $tag)
-                 {
-                     $k[]=$tag;
-                }
-                //dd($k);
-         $p=collect([
-                'id'=>$post->id,
-                'title'=>$post->title,
-                'name'=>$post->user()->get()->first()->name,
-                'created_at'=>$post->created_at,
-                'description'=>str_limit($post->content,250),
-                'featured'=>$post->featured
+        $k = [];
+        if ($post)
+        {
+            foreach ($post->tags as $tag)
+            {
+                $k[] = $tag;
+            }
+            //dd($k);
+            $p = collect([
+                'id'          => $post->id,
+                'title'       => $post->title,
+                'name'        => $post->user()->get()->first()->name,
+                'created_at'  => $post->created_at,
+                'description' => str_limit($post->content, 250),
+                'featured'    => $post->featured,
 
-        ]);
-         }
+            ]);
+        }
         else
         {
-            $k=[];
-            $p=[];
+            $k = [];
+            $p = [];
         }
-       //dd($k);
-       
-        $projects=Project::orderBy('id','desc')->take(4)->get();
-       // dd($projects);
+        //dd($k);
 
-        $progressbar=[
-           'danger',
-           'success',
-           'info',
-           'warning'
+        $projects = Project::orderBy('id', 'desc')->take(4)->get();
+        // dd($projects);
+
+        $progressbar = [
+            'danger',
+            'success',
+            'info',
+            'warning',
         ];
 
-     
         //dd($progressbar);
-       // $arraye = array_combine($projects, $progressbar);
+        // $arraye = array_combine($projects, $progressbar);
         //dd($arraye);
 
-        
-$icons = [
-        'graduation-cap',
-        'archive',
-       'graduation-cap',
-         'table',
-    ];
+        $icons = [
+            'graduation-cap',
+            'archive',
+            'graduation-cap',
+            'table',
+        ];
 
-
-       //dd($p['description']);
-        return view('General.front')->with('projects',$projects)
-                                    ->with('post',$p)
-                                    ->with('icons',$icons)
-                                    ->with('lpost',$new)
-                                    ->with('progress',$progressbar)
-                                    ->with('tags',$k);
+        //dd($p['description']);
+        return view('General.front')->with('projects', $projects)
+            ->with('post', $p)
+            ->with('icons', $icons)
+            ->with('lpost', $new)
+            ->with('progress', $progressbar)
+            ->with('tags', $k);
 
     }
 

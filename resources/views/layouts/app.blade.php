@@ -110,6 +110,18 @@
                                 All Documentations
                             </a>
                         </li> 
+                         <li class="list-group-item sido">
+                            <a href=" {{route('changelogs')}} " class="walter">
+                                <i class="fa fa-files-o"></i>&nbsp;
+                                All Changelogs
+                            </a>
+                        </li>
+                        <li class="list-group-item sido">
+                            <a href=" {{route('changelog.create')}} " class="walter">
+                                <i class="fa fa-files-o"></i>&nbsp;
+                                Create Changelogs
+                            </a>
+                        </li>
                         <li class="list-group-item sido">
                             <a href=" {{route('categories')}} " class="walter">
                                 <i class="fa fa-map-signs"></i>&nbsp;

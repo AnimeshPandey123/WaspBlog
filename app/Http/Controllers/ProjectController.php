@@ -62,6 +62,13 @@ class ProjectController extends Controller
              Session::flash('success','your project is updated');
         return redirect()->back();
     }
+    public function delete($id)
+    {
+      $project=Project::find($id);
+      $project->delete();
+      Session::flash('nope','Your Project is deleted');
+      return redirect()->back();
+    }
     public function projects()
     {
 
