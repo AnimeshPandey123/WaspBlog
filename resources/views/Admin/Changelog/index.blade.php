@@ -57,7 +57,8 @@
 	 			</tbody>
 
 
- 			</table>	
+ 			</table>
+ 			{{$changes->links()}}		
  			</div>
  			
  		</div>

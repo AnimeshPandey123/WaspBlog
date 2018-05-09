@@ -12,7 +12,7 @@ class ChangelogController extends Controller
 {
     public function index()
     {
-        $changes = Changelog::all();
+        $changes = Changelog::paginate(10);
         // dd($changes->first());
         return view('Admin.Changelog.index')->with('changes', $changes);
     }
